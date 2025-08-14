@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfólio</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="fundo">
+    <header class="topo">
+      <div class="logo">
+        <img src="Imagens/Jenny-removebg-preview.png" alt="Logo do site">
+      </div>
+      <nav class="menu">
+        <ul>
+          <li><a href="index.html">Início</a></li>
+          <li><a href="sobre.html">Sobre</a></li>
+          <li><a href="portfolio.html">Portfólio</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="portfolio">
+      <h2 class="titulo-portfolio">PORTFÓLIO</h2>
+
+      <div class="filtros">
+  <button class="filtro ativo" data-filtro="social-media">Tudo</button>
+  <button class="filtro" data-filtro="Açaiteria">Açaiteria</button>
+  <button class="filtro" data-filtro="Hamburgueria">Hamburgueria</button>
+  <button class="filtro" data-filtro="Soverteria">Soverteria</button>
+  <button class="filtro" data-filtro="Ilustracoes">Ilustrações</button>
+</div>
+
+      <div class="grid-portfolio">
+        <img src="Imagens/1.png" alt="Item 1" class="Soverteria">
+        <img src="Imagens/3.png" alt="Item 2" class="Soverteria">
+        <img src="imagens/6 2.png" alt="Item 3" class="Soverteria">
+        <img src="imagens/6.png" alt="Item 4" class="Soverteria">
+        <img src="imagens/7.png" alt="Item 5" class="Soverteria">
+        <img src="imagens/2.png" alt="Item 6" class="Soverteria">
+        <img src="imagens/4.png" alt="Item 7" class="Soverteria">
+        <img src="imagens/8.png" alt="Item 8" class="Soverteria">
+        <img src="Imagens/Post Acai/1.png" alt="Item 9" class="Açaiteria">
+        <img src="Imagens/Post Acai/2.png" alt="Item 10" class="Açaiteria">
+        <img src="Imagens/Post Acai/3.png" alt="Item 11" class="Açaiteria">
+        <img src="Imagens/Post Acai/4.png" alt="Item 12" class="Açaiteria">
+        <img src="Imagens/Post Acai/5.png" alt="Item 13" class="Açaiteria">
+        <img src="Imagens/Post Acai/6.png" alt="Item 14" class="Açaiteria">
+        <img src="Imagens/Post Acai/7.png" alt="Item 15" class="Açaiteria">
+        <img src="Imagens/Post Acai/8.png" alt="Item 16" class="Açaiteria">
+        <img src="Imagens/Post Acai/9.png" alt="Item 17" class="Açaiteria">
+        <img src="Imagens/Post Acai/10.png" alt="Item 18" class="Açaiteria">
+        <img src="Imagens/Post Hamburguer/1.png" alt="Item 19" class="Hamburgueria">
+        <img src="Imagens/Post Hamburguer/2.png" alt="Item 20" class="Hamburgueria">
+        <img src="Imagens/Post Hamburguer/3.png" alt="Item 21" class="Hamburgueria">
+        <img src="Imagens/Post Hamburguer/4.png" alt="Item 22" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/5.png" alt="Item 23" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/6.png" alt="Item 24" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/7.png" alt="Item 25" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/8.png" alt="Item 26" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/9.png" alt="Item 27" class="Hamburgueria"> 
+        <img src="Imagens/Post Hamburguer/10.png" alt="Item 28" class="Hamburgueria"> 
+
+      </div>
+    </main>
+      <script>
+    const botoes = document.querySelectorAll('.filtro');
+    const imagens = document.querySelectorAll('.grid-portfolio img');
+
+    botoes.forEach(botao => {
+      botao.addEventListener('click', () => {
+        // Remove classe ativo de todos os botões
+        botoes.forEach(b => b.classList.remove('ativo'));
+        botao.classList.add('ativo');
+
+        const filtro = botao.getAttribute('data-filtro');
+        imagens.forEach(img => {
+          // Para funcionar, as classes devem ser exatamente iguais ao data-filtro
+          if (img.classList.contains(filtro)) {
+            img.style.display = '';
+          } else {
+            img.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+    <footer>
+      <p>&copy; 2025 Meu Site. Todos os direitos reservados.</p>
+    </footer>
+  </div>
+</body>
+</html>
+
